@@ -1,0 +1,20 @@
+环境配置:
+
+sudo apt install libssl-dev
+sudo apt install libbrotli-dev
+sudo apt install libjsoncpp-dev
+
+
+修改文件:
+在 CmakeLists.txt 中增加一行: target_link_libraries(yolov5  brotlicommon brotlienc brotlidec ssl pthread crypto jsoncpp)
+
+
+替换 yolov5.cpp
+yolov5.cpp 中替换 288行为你的engine 文件 
+
+cd build
+rm CMake* -rf
+
+cmake ..
+make
+./yolov5
